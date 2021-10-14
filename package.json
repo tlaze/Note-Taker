@@ -1,0 +1,23 @@
+{
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "Allows user to write and save notes",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlaze/Note-Taker.git"
+  },
+  "author": "Tom Lazore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tlaze/Note-Taker/issues"
+  },
+  "homepage": "https://github.com/tlaze/Note-Taker#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
