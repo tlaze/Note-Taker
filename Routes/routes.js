@@ -1,7 +1,6 @@
 const path = require('path');
 const route = require('express').Router();
 const fs = require('fs');
-const noteData = require('../db/db.json');
 
 //API Routes
 route.get('/api/notes', (req,res) => {
@@ -47,6 +46,11 @@ route.post('/api/notes', (req,res) => {
         }
     });
 });
+
+route.delete("/api/notes/:id", (req,res) => {
+    const id = parseInt(req.params.id);
+    console.log(id);
+})
 
 
 //HTML Routes
