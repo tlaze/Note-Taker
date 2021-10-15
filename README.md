@@ -56,7 +56,11 @@
 
   ## ScreenShot
 
-  ![Screenshot](C:/Users/tl524/Desktop/Note-Taker/assets/images/screenshot2.png)
+  ![screenshot2](https://user-images.githubusercontent.com/47471193/137427711-ad0d2aa7-bca8-4163-a5d4-f1e92446cfea.png)
+
+
+  ![screenshot](https://user-images.githubusercontent.com/47471193/137427716-95ae448f-188e-4dc2-809c-bcc91541db4e.png)
+
 
   ## Links
 
