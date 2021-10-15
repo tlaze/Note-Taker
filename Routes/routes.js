@@ -20,15 +20,14 @@ route.post('/api/notes', (req,res) => {
             console.error(err);
         }
         else{
-            const notes = JSON.parse(data);
-            console.log(notes);
+            let notes = JSON.parse(data);
 
-            const notesArray = [];
+            let notesArray = [];
 
             notes.push(req.body);
             
             for(var i = 0; i < notes.length; i++){
-                const newNote = {
+                let newNote = {
                     title: notes[i].title,
                     text: notes[i].text,
                     id: i
@@ -50,6 +49,30 @@ route.post('/api/notes', (req,res) => {
 route.delete("/api/notes/:id", (req,res) => {
     const id = parseInt(req.params.id);
     console.log(id);
+
+    //Reads db.json then parses through the data and adds it to an array.
+    fs.readFile(path.join(__dirname, "../db/db.json"), (err,data) => {
+        if(err){
+            console.log(err);
+        }
+        else{
+            let notes = JSON.parse(data);
+            let notesArray = [];
+            //if each iteration doesn't equal the id number choses, it pushes it into an array. Therefor deleting the chosen id
+            for(var i = 0; i < notes.length; i++){
+                if(i !== id){
+                    let newNote = {
+                        title: notes[i].title,
+                        text: notes[i].text,
+                        id: notesArray.length   //Keeps Id's consistent when deleting notes
+                    };
+                    
+                    notesArray.push(newNote);   //New array doesn't include deleted note
+                }
+            }
+            console.log(notesArray);
+        }
+    })
 })
 
 
