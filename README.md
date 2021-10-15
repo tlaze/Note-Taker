@@ -56,7 +56,7 @@
 
   ## ScreenShot
 
-  ![Screenshot](C:\Users\tl524\Desktop\Note-Taker\assets\images\screenshot2.png)
+  ![Screenshot](C:/Users/tl524/Desktop/Note-Taker/assets/images/screenshot2.png)
 
   ## Links
 
