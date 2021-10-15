@@ -53,11 +53,12 @@ route.delete("/api/notes/:id", (req,res) => {
     //Reads db.json then parses through the data and adds it to an array.
     fs.readFile(path.join(__dirname, "../db/db.json"), (err,data) => {
         if(err){
-            console.log(err);
+            console.err(err);
         }
         else{
             let notes = JSON.parse(data);
             let notesArray = [];
+
             //if each iteration doesn't equal the id number choses, it pushes it into an array. Therefor deleting the chosen id
             for(var i = 0; i < notes.length; i++){
                 if(i !== id){
@@ -71,6 +72,15 @@ route.delete("/api/notes/:id", (req,res) => {
                 }
             }
             console.log(notesArray);
+
+            fs.writeFile(path.join(__dirname, "../db/db.json"), JSON.stringify(notesArray, null, 2), (err) =>{
+                if(err){
+                    console.error(err);
+                }
+                else{
+                    res.json(req.body);
+                }
+            })
         }
     })
 })
